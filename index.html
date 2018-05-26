@@ -4,6 +4,8 @@
     <title>Advanced Microservices</title>
     <meta charset="utf-8">
     <style>
+        @import url(https://fonts.googleapis.com/css?family=Ubuntu);
+        @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
         body {
           font-family: 'Ubuntu';
         color: #ccc;
@@ -25,12 +27,53 @@
         text-shadow: .5px .5px #222;
         font-size: 1em;
       }
-      #slide-light .regular {
-        width: 30%;
-        float: right;
-        padding-top: 2em;
-        text-shadow: 1px 1px #555;
+
+      #slide-introduction {
+        color: #ddd;
+        font-size: 1.5em;
+        background-color: #444;
+        text-shadow: 4px 4px #222;
+      }
+      #slide-introduction .footnote {
+        color: #ccc;
+        position: absolute;
+        bottom: 3em;
+        font-size: .8em;
+        float: left;
         font-size: 1em;
+        text-shadow: 2px 2px #222;
+      }
+      #slide-introduction .regular {
+        color: #ddd;
+        width: 95%;
+        background-color: rgba(25, 25, 25, .6);
+      }
+      #slide-introduction .page_left {
+        color: #ddd;
+        width: 95%;
+        float: left;
+        background-color: rgba(25, 25, 25, .6);
+      }
+      #slide-introduction .page_right {
+        color: #ddd;
+        width: 65%;
+        float: right;
+      }
+      #slide-introduction a {
+        color: #ccc;
+        padding-right: 1em;
+      }
+
+      #slide-motivation {
+        color: #ddd;
+        text-shadow: 2px 2px #222;
+        font-size: 1.5em;
+        background-color: #444;
+      }
+      #slide-motivation .regular {
+        color: #ddd;
+        width: 95%;
+        background-color: rgba(25, 25, 25, .6);
       }
       #slide-motivation .footnote {
         color: #ccc;
@@ -40,39 +83,6 @@
         float: left;
         font-size: 1em;
         text-shadow: 2px 2px #222;
-      }
-      #slide-light {
-        color: #ddd;
-        text-shadow: 2px 2px #222;
-        font-size: 1.5em;
-        background-color: #444;
-      }
-      #slide-light .footnote {
-        color: #ccc;
-        position: absolute;
-        bottom: 3em;
-        font-size: .8em;
-        float: left;
-        font-size: 1em;
-        text-shadow: 2px 2px #222;
-      }
-      #slide-light .left-column{
-        background-color: rgba(25, 25, 25, .4);
-      }
-      #slide-light a {
-        color: #ccc;
-      }
-      #slide-light .example_page_left{
-        color: #ddd;
-        width: 95%;
-        float: left;
-        background-color: rgba(25, 25, 25, .4);
-      }
-      #slide-motivation {
-        color: #ddd;
-        text-shadow: 2px 2px #222;
-        font-size: 1.5em;
-        background-color: #444;
       }
       #slide-motivation .remark-code {
         font-size: .9em;
@@ -85,9 +95,14 @@
         color: #ddd;
         width: 95%;
         float: left;
-        background-color: rgba(25, 25, 25, .4);
       }
-      #slide-explore .example_page_left{
+      #slide-motivation .example_page_right{
+        color: #ddd;
+        width: 75%;
+        float: right;
+      }
+
+      #slide-explore .page_left{
         color: #ddd;
         width: 95%;
         float: left;
@@ -217,7 +232,7 @@
         padding-top: 6em;
       }
       .remark-code,
-      .remark-inline-code { font-family: 'Droid Sans Mono'; }
+      .remark-inline-code { font-family: 'Ubuntu Mono'; }
     </style>
   </head>
   <body>
