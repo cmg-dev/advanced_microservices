@@ -576,6 +576,9 @@ background-image: url(img/solo_1.jpg)
 background-image: url(img/together.jpg)
 
 ---
+background-image: url(img/final_scene.jpg)
+
+---
 name: motivation
 class: center, middle
 background-image: url(img/together.jpg)
