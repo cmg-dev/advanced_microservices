@@ -143,7 +143,15 @@ background-image: url(img/extinct.jpg)
 
 .regular[
 # Eric Raymond’s 17 Unix Rules
+1. Rule of Modularity
+1. Rule of Composition
+1. Rule of Separation
+1. Rule of Simplicity
 
+(...)
+]
+
+???
 1. Rule of Modularity
 
    Developers should build a program out of simple parts connected by well
@@ -156,14 +164,7 @@ background-image: url(img/extinct.jpg)
    Developers should write programs that can communicate easily with other
    programs. This rule aims to allow developers to break down projects into
    small, simple programs rather than overly complex monolithic programs.
-]
 
----
-name: motivation
-class: left, middle
-background-image: url(img/extinct.jpg)
-
-.regular[
 1. Rule of Separation
 
    Developers should separate the mechanisms of the programs from the policies
@@ -178,7 +179,6 @@ background-image: url(img/extinct.jpg)
    program systems into small, straightforward cooperating pieces. This rule
    aims to discourage developers’ affection for writing “intricate and
    beautiful complexities” that are in reality bug prone programs.
-]
 
 ---
 name: motivation
@@ -186,6 +186,13 @@ class: left, middle
 background-image: url(img/extinct.jpg)
 
 .regular[
+1. Rule of Robustness
+1. Rule of Transparency
+1. Rule of Parsimony
+]
+
+???
+
 1. Rule of Parsimony
 
    Developers should avoid writing big programs. This rule aims to prevent
@@ -210,7 +217,6 @@ background-image: url(img/extinct.jpg)
    programs. This rule aims to help developers build robust, reliable products.
 
 (...)
-]
 
 <!-- 1. Rule of Representation -->
 
@@ -247,41 +253,6 @@ class: left, middle
 background-image: url(img/extinct.jpg)
 
 .regular[
-1. Rule of Generation
-
-   Developers should avoid writing code by hand and instead write abstract
-   high-level programs that generate code. This rule aims to reduce human
-   errors and save time.
-
-1. Rule of Optimization
-
-   Developers should prototype software before polishing it. This rule aims to
-   prevent developers from spending too much time for marginal gains.
-
-<!-- 1. Rule of Diversity -->
-
-<!--    Developers should design their programs to be flexible and open. This rule -->
-<!--    aims to make programs flexible, allowing them to be used in ways other than -->
-<!--    those their developers intended. -->
-
-<!-- 1. Rule of Extensibility -->
-
-<!--    Developers should design for the future by making their protocols -->
-<!--    extensible, allowing for easy plugins without modification to the program's -->
-<!--    architecture by other developers, noting the version of the program, and -->
-<!--    more. This rule aims to extend the lifespan and enhance the utility of the -->
-<!--    code the developer writes. -->
-]
-.footnote[
-https://en.wikipedia.org/w/index.php?title=Unix_philosophy&oldid=841228158#Eric_Raymond%E2%80%99s_17_Unix_Rules
-]
-
----
-name: motivation
-class: left, middle
-background-image: url(img/extinct.jpg)
-
-.regular[
 ## Mike Gancarz: The UNIX Philosophy
 
 1. Small is beautiful.
@@ -295,7 +266,9 @@ background-image: url(img/extinct.jpg)
 1. Make every program a filter.
 ]
 .footnote[
+<i class="fa fa-link fa-1x"></i> [The Unix Philosophy](
 https://en.wikipedia.org/w/index.php?title=Unix_philosophy&oldid=841228158#Mike_Gancarz:_The_UNIX_Philosophy
+)
 ]
 
 ???
@@ -305,9 +278,20 @@ programmers and people in other fields who depended on Unix, to produce The
 UNIX Philosophy which sums it up in 9 paramount precepts:
 
 ---
-name: introduction
+name: motivation
 class: left, middle
 background-image: url(img/space.jpg)
+
+.regular[
+## How Does it Look Like?
+]
+
+![process2](img/complete_view.svg)
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/tidy_stack_small.jpg)
 
 .regular[
 # Advices - Summary
@@ -341,10 +325,240 @@ http://scs-architecture.org/
 ---
 name: introduction
 class: left, middle
-background-image: url(img/tellerrand.jpg)
+background-image: url(img/idea.jpg)
 
 .regular[
 # A New Idea
+]
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/idea.jpg)
+
+.regular[
+## A New Idea
+
+Processes as
+
+1. center of communication.
+1. documentation.
+1. base for Microservices.
+]
+
+---
+background-image: url(img/company_clouds.jpg)
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/company_clouds.jpg)
+
+.regular[
+## What Have We Done?
+
+![use case](img/landscape.svg)
+]
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/company_clouds.jpg)
+
+.regular[
+## Bring it to Life! With an Orchestration
+
+![use case](img/orchestration.svg)
+]
+
+---
+background-image: url(img/thunder.jpg)
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/thunder.jpg)
+
+.regular[
+## We Lost the Connection to the Business
+]
+
+---
+background-image: url(img/people_boss.jpg)
+
+---
+name: motivation
+class: left, middle
+background-image: url(img/people_boss.jpg)
+
+.regular[
+## Boss Thinks
+
+Moeny Money Money.
+]
+
+---
+background-image: url(img/people_dev.jpg)
+
+---
+name: motivation
+class: left, middle
+background-image: url(img/people_dev.jpg)
+
+.regular[
+## Developer Thinks
+
+Code Code Code.
+]
+
+---
+background-image: url(img/people_op.jpg)
+
+---
+name: motivation
+class: left, middle
+background-image: url(img/people_op.jpg)
+
+.regular[
+## Operator Thinks
+
+OMG. Mess. Help.
+]
+
+---
+background-image: url(img/work_together.jpg)
+
+---
+name: motivation
+class: left, middle
+background-image: url(img/work_together.jpg)
+
+.regular[
+## Work Together, How?
+
+Find a common language. This is hard.
+]
+
+---
+name: motivation
+class: left, middle
+background-image: url(img/business_case.jpg)
+
+.regular[
+## Argument for Processes
+]
+
+---
+name: motivation
+class: left, middle
+background-image: url(img/business_case.jpg)
+
+.regular[
+## Argument for Processes
+
+Wait, what about the Rules?
+
+1. Rule of Transparency
+1. Rule of Parsimony
+1. Rule of Generation
+1. Rule of Optimization
+]
+.footnote[
+<i class="fa fa-link fa-1x"></i> [From 17 Unix Rules](https://en.wikipedia.org/w/index.php?title=Unix_philosophy&oldid=841228158#Eric_Raymond%E2%80%99s_17_Unix_Rules)
+]
+
+???
+
+1. Rule of Generation
+
+   Developers should avoid writing code by hand and instead write abstract
+   high-level programs that generate code. This rule aims to reduce human
+   errors and save time.
+
+1. Rule of Optimization
+
+   Developers should prototype software before polishing it. This rule aims to
+   prevent developers from spending too much time for marginal gains.
+
+1. Rule of Diversity
+
+   Developers should design their programs to be flexible and open. This rule
+   aims to make programs flexible, allowing them to be used in ways other than
+   those their developers intended.
+
+1. Rule of Extensibility
+
+   Developers should design for the future by making their protocols
+   extensible, allowing for easy plugins without modification to the program's
+   architecture by other developers, noting the version of the program, and
+   more. This rule aims to extend the lifespan and enhance the utility of the
+   code the developer writes.
+
+---
+name: motivation
+class: left, top
+background-image: url(img/business_case.jpg)
+
+.regular[
+## Argument for Processes
+
+![process1](img/process_delete.svg)
+]
+
+---
+name: motivation
+class: left, top
+background-image: url(img/business_case.jpg)
+
+.regular[
+## Argument for Processes
+
+![process2](img/landscape.svg)
+]
+
+---
+name: motivation
+class: left, top
+background-image: url(img/business_case.jpg)
+
+.regular[
+## Argument for Processes
+
+![process2](img/process_sample.svg)
+]
+
+---
+name: motivation
+class: center, middle
+background-image: url(img/business_case.jpg)
+
+![process2](img/layered_architecture_with_processes.svg)
+
+---
+name: motivation
+class: center, middle
+background-image: url(img/business_case.jpg)
+
+![dashboad](img/kibana_dashboarg.png)
+
+---
+name: motivation
+class: center, middle
+background-image: url(img/business_case.jpg)
+
+![heatmap](img/heatmap.png)
+
+---
+name: motivation
+class: left, middle
+background-image: url(img/business_case.jpg)
+
+.regular[
+## Argument for Processes
+
+Processes are probably a good idea.
+
+It will bring us to our common goal.
 ]
 
 ---
@@ -359,8 +573,27 @@ background-image: url(img/solo_1.jpg)
 ]
 
 ---
-name: demo
+background-image: url(img/together.jpg)
+
+---
+name: motivation
+class: center, middle
+background-image: url(img/together.jpg)
+
+.regular[
+## Boss == Developer == Operator
+
+### Money. Money. Money.
+]
+
+---
+name: introduction
 class: left
+background-image: url(img/workshop_garage.jpg)
+
+---
+name: introduction
+class: left, middle
 background-image: url(img/pilot.jpg)
 
 .left-column[
@@ -371,11 +604,62 @@ background-image: url(img/pilot.jpg)
 ]
 
 ---
-name: demo
-class: left
-background-image: url(img/solo_0.jpg)
+name: introduction
+class: left, middle
+background-image: url(img/cinema.jpg)
 
-.left-column[
+.regular[
+# Summary and Story Time
+]
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/cinema.jpg)
+
+.regular[
+## Summary and Story Time
+
+1. We want to be fault tolerant.
+1. Dependencies are all transparent.
+1. Failures are just changes.
+1. We want to scale.
+]
+
+---
+name: introduction
+class: center, middle
+background-image: url(img/pilot.jpg)
+
+![containerpilot](img/containerpilot_architecture.png)
+
+---
+name: introduction
+class: center, middle
+background-image: url(img/pilot.jpg)
+
+![containerpilot](img/application-diagram_simple.jpg)
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/pilot.jpg)
+
+.regular[
+## What Do We Have?
+
+1. nginx - nginx server rendering static assets
+1. consul - service catalog used to keep track of registered services
+1. hello - Node.js service responding with the word "Hello"
+1. world - Node.js service responding with the word "World"
+]
+
+---
+name: demo
+class: left, middle
+background-image: url(img/solo_1.jpg)
+
+.regular[
 # Livedemo Fun
 
 **Let's check out the ContainerPilot Pattern...**
@@ -386,8 +670,8 @@ name: explore
 class: left, middle
 background-image: url(img/playground.jpg)
 
-.page_left[
-# Let's code together...
+.regular[
+# Let's Play Together...
 
 <i class="fa fa-link fa-1x"></i> [7. Juni. 2018 Coding Dojo](https://www.meetup.com/de-DE/5Minds-Coding-Dojo/events/250814256)
 ]
