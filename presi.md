@@ -31,7 +31,7 @@ background-image: url(img/space.jpg)
 
 ---
 name: introduction
-class: center, middle
+class: left, middle
 background-image: url(img/space.jpg)
 
 .regular[
@@ -78,7 +78,6 @@ background-image: url(img/space.jpg)
 <i class="fab fa-pinterest fa-1x"></i> [Netflix](https://www.nginx.com/blog/microservices-at-netflix-architectural-best-practices/)
 <i class="fab fa-whatsapp fa-1x"></i> [Whatsapp](https://www.fastcompany.com/3026758/inside-erlang-the-rare-programming-language-behind-whatsapps-success)
 <i class="fab fa-sap fa-1x"></i> [SAP](https://news.sap.com/germany/vorteile-von-microservices/)
-
 ]
 .footnote[
 <i class="fa fa-link fa-1x"></i> [12 Factor](https://12factor.net/de/)
@@ -105,7 +104,7 @@ background-image: url(img/space.jpg)
 ---
 name: motivation
 class: left, middle
-background-image: url(img/extinct.jpg)
+background-image: url(img/space.jpg)
 
 .regular[
 # What is a Microservice?
@@ -147,6 +146,9 @@ background-image: url(img/extinct.jpg)
 1. Rule of Composition
 1. Rule of Separation
 1. Rule of Simplicity
+1. Rule of Robustness
+1. Rule of Transparency
+1. Rule of Parsimony
 
 (...)
 ]
@@ -179,19 +181,6 @@ background-image: url(img/extinct.jpg)
    program systems into small, straightforward cooperating pieces. This rule
    aims to discourage developers’ affection for writing “intricate and
    beautiful complexities” that are in reality bug prone programs.
-
----
-name: motivation
-class: left, middle
-background-image: url(img/extinct.jpg)
-
-.regular[
-1. Rule of Robustness
-1. Rule of Transparency
-1. Rule of Parsimony
-]
-
-???
 
 1. Rule of Parsimony
 
@@ -280,6 +269,87 @@ UNIX Philosophy which sums it up in 9 paramount precepts:
 ---
 name: motivation
 class: left, middle
+background-image: url(img/extinct.jpg)
+
+.regular[
+## Example 1
+
+```bash
+# print all SVGs...
+
+$ tree | grep svg | awk '{ print $3 }'
+```
+]
+
+---
+name: motivation
+class: left, middle
+background-image: url(img/extinct.jpg)
+
+.regular[
+## Example 1 - Explanation
+
+```bash
+$ tree | grep svg
+│   ├── complete_view.svg
+│   ├── landscape.svg
+│   ├── layered_architecture_with_processes.svg
+│   ├── orchestration.svg
+│   ├── process_delete.svg
+│   ├── process_sample.svg
+│   ├── three_landscapes.svg
+
+# Just with one other program we achieve
+
+$ tree | grep svg | awk '{ print $3 }'
+complete_view.svg
+landscape.svg
+layered_architecture_with_processes.svg
+orchestration.svg
+process_delete.svg
+process_sample.svg
+three_landscapes.svg
+```
+]
+
+---
+name: motivation
+class: left, middle
+background-image: url(img/extinct.jpg)
+
+.regular[
+## Example 2
+
+```bash
+git branch --merged | egrep -v "(master|develop)" | xargs git branch -D
+```
+]
+---
+name: motivation
+class: left, middle
+background-image: url(img/extinct.jpg)
+
+.regular[
+## Example 2 - Explanation
+
+```bash
+# Get all merged branches.
+
+git branch --merged
+
+# All merged branches; exclude master and devevlop.
+
+git branch --merged | egrep -v "(master|develop)"
+
+# Delete all merged branches exept master and develop.
+
+git branch --merged | egrep -v "(master|develop)" | xargs git branch -D
+```
+]
+
+---
+name: motivation
+class: center, middle
 background-image: url(img/space.jpg)
 
 .regular[
@@ -296,7 +366,7 @@ background-image: url(img/tidy_stack_small.jpg)
 .regular[
 # Advices - Summary
 
-1. Do 12 Factor Apps.
+1. Do 12 Factor apps.
 
 2. Know the Unix philosophy.
 
@@ -306,6 +376,11 @@ background-image: url(img/tidy_stack_small.jpg)
 
 6. Communication is key.
 ]
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/breathe.jpg)
 
 ---
 name: introduction
@@ -326,9 +401,9 @@ background-image: url(img/idea.jpg)
 
 Processes as
 
-1. center of communication.
-1. documentation.
-1. base for Microservices.
+1. central tool of communication.
+1. core of the documentation.
+1. foundation for Microservices.
 ]
 
 ---
