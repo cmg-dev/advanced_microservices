@@ -642,6 +642,8 @@ class: left, middle
 background-image: url(img/pilot.jpg)
 
 .regular[
+## Service Responsible For Startup/Discovery/Shutdown...
+
 1. preStart - to initialize the microservice (e.g. to create configuration files).
 1. preStop/postStop - to perform a cleanup right before or after main process stopped.
 1. health - to periodically check if the application behaves as expected.
