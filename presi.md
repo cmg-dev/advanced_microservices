@@ -378,8 +378,6 @@ background-image: url(img/tidy_stack_small.jpg)
 ]
 
 ---
-name: introduction
-class: left, middle
 background-image: url(img/breathe.jpg)
 
 ---
@@ -419,7 +417,11 @@ background-image: url(img/company_clouds.jpg)
 ]
 
 ---
+name: introduction
+class: center, middle
 background-image: url(img/thunder.jpg)
+
+![use case](img/orchestration.svg)
 
 ---
 name: introduction
@@ -436,7 +438,7 @@ class: left, middle
 background-image: url(img/idea.jpg)
 
 .regular[
-# A New Idea
+# A New Idea: Processes
 ]
 
 ---
@@ -567,7 +569,7 @@ Wait, what about the Rules?
 
 ---
 name: motivation
-class: left, top
+class: center, top
 background-image: url(img/business_case.jpg)
 
 .regular[
@@ -578,7 +580,7 @@ background-image: url(img/business_case.jpg)
 
 ---
 name: motivation
-class: left, top
+class: center, top
 background-image: url(img/business_case.jpg)
 
 .regular[
@@ -589,7 +591,7 @@ background-image: url(img/business_case.jpg)
 
 ---
 name: motivation
-class: left, top
+class: center, middle
 background-image: url(img/business_case.jpg)
 
 .regular[
@@ -600,24 +602,30 @@ background-image: url(img/business_case.jpg)
 
 ---
 name: motivation
-class: center, middle
+class: center, top
 background-image: url(img/business_case.jpg)
 
+.regular[
 ![process2](img/layered_architecture_with_processes.svg)
+]
 
 ---
 name: motivation
 class: center, middle
 background-image: url(img/business_case.jpg)
 
+.regular[
 ![dashboad](img/kibana_dashboarg.png)
+]
 
 ---
 name: motivation
 class: center, middle
 background-image: url(img/business_case.jpg)
 
+.regular[
 ![heatmap](img/heatmap.png)
+]
 
 ---
 name: motivation
@@ -627,20 +635,11 @@ background-image: url(img/business_case.jpg)
 .regular[
 ## Argument for Processes
 
-Processes are probably a good idea.
+We already have plenty of them!
+
+Using them is probably a good idea.
 
 It will bring us to our common goal.
-]
-
----
-name: demo
-class: left
-background-image: url(img/solo_1.jpg)
-
-.left-column[
-# Livecoding Fun
-
-**Let's design a process together...**
 ]
 
 ---
@@ -661,21 +660,7 @@ background-image: url(img/together.jpg)
 ]
 
 ---
-name: introduction
-class: left
-background-image: url(img/workshop_garage.jpg)
-
----
-name: introduction
-class: left, middle
-background-image: url(img/pilot.jpg)
-
-.left-column[
-# Container Pilot Pattern
-
-<!-- Link for containerpilot_architecture.png -->
-<!-- http://container-solutions.com/containerpilot-on-mantl/ -->
-]
+background-image: url(img/beautiful_stack.jpg)
 
 ---
 name: introduction
@@ -696,9 +681,41 @@ background-image: url(img/cinema.jpg)
 
 1. We want to be fault tolerant.
 1. Dependencies are all transparent.
+1. We want well behaving services.
 1. Failures are just changes.
 1. We want to scale.
 ]
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/workshop_garage.jpg)
+
+.regular[
+# Technical Topic: Pilots
+]
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/workshop_garage.jpg)
+
+.regular[
+## The Story Translates to
+
+1. Service Discovery
+1. Load Balancing
+1. Automated failover
+1. Config changes
+1. Architectural Monitoring
+]
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/pilot.jpg)
+
+# Autopilot Pattern
 
 ---
 name: introduction
@@ -706,6 +723,10 @@ class: center, middle
 background-image: url(img/pilot.jpg)
 
 ![containerpilot](img/containerpilot_architecture.png)
+
+.footnote[
+<i class="fa fa-link fa-1x"></i> [Source](http://container-solutions.com/containerpilot-on-mantl/)
+]
 
 ---
 name: introduction
@@ -726,7 +747,12 @@ name: introduction
 class: center, middle
 background-image: url(img/pilot.jpg)
 
+.regular[
 ![containerpilot](img/application-diagram_simple.jpg)
+]
+.footnote[
+<i class="fa fa-link fa-1x"></i> [Autopilot Hello-World](https://github.com/autopilotpattern/hello-world)
+]
 
 ---
 name: introduction
@@ -736,10 +762,10 @@ background-image: url(img/pilot.jpg)
 .regular[
 ## What Do We Have?
 
-1. nginx - nginx server rendering static assets
-1. consul - service catalog used to keep track of registered services
-1. hello - Node.js service responding with the word "Hello"
-1. world - Node.js service responding with the word "World"
+1. Nginx - nginx server rendering static assets.
+1. Consul - service catalog used to keep track of registered services.
+1. Hello - Node.js service responding with the word "Hello".
+1. World - Node.js service responding with the word "World".
 ]
 
 ---
@@ -752,6 +778,21 @@ background-image: url(img/solo_1.jpg)
 
 **Let's check out the ContainerPilot Pattern...**
 ]
+
+---
+name: introduction
+class: center, middle
+background-image: url(img/pilot.jpg)
+
+.regular[
+![containerpilot](img/sales_example.png)
+]
+.footnote[
+<br>
+<br>
+<i class="fab fa-github fa-1x"></i> [Source](https://github.com/autopilotpattern/workshop)
+]
+
 
 ---
 name: explore
@@ -770,23 +811,5 @@ class: left, middle
 background-image: url(img/curious.jpg)
 
 .page_left[
-#... stay Curious!
-]
-
----
-name: explore
-class: left, middle
-background-image: url(img/tools.jpg)
-
-.example_page_left[
-#... stay Curious!
-]
-
----
-name: explore
-class: left, middle
-background-image: url(img/first_success.png)
-
-.example_page_left[
 #... stay Curious!
 ]
