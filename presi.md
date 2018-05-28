@@ -383,6 +383,54 @@ class: left, middle
 background-image: url(img/breathe.jpg)
 
 ---
+background-image: url(img/company_clouds.jpg)
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/company_clouds.jpg)
+
+.regular[
+# Something is on the Horizon
+]
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/company_clouds.jpg)
+
+.regular[
+## What Have We Done?
+
+![use case](img/landscape.svg)
+
+Missing link.
+]
+
+---
+name: introduction
+class: center, middle
+background-image: url(img/company_clouds.jpg)
+
+.regular[
+## Bring it to Life! With an Orchestration
+
+![use case](img/orchestration.svg)
+]
+
+---
+background-image: url(img/thunder.jpg)
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/thunder.jpg)
+
+.regular[
+## We Lost the Connection to the Business
+]
+
+---
 name: introduction
 class: left, middle
 background-image: url(img/idea.jpg)
@@ -404,43 +452,6 @@ Processes as
 1. central tool of communication.
 1. core of the documentation.
 1. foundation for Microservices.
-]
-
----
-background-image: url(img/company_clouds.jpg)
-
----
-name: introduction
-class: left, middle
-background-image: url(img/company_clouds.jpg)
-
-.regular[
-## What Have We Done?
-
-![use case](img/landscape.svg)
-]
-
----
-name: introduction
-class: left, middle
-background-image: url(img/company_clouds.jpg)
-
-.regular[
-## Bring it to Life! With an Orchestration
-
-![use case](img/orchestration.svg)
-]
-
----
-background-image: url(img/thunder.jpg)
-
----
-name: introduction
-class: left, middle
-background-image: url(img/thunder.jpg)
-
-.regular[
-## We Lost the Connection to the Business
 ]
 
 ---
