@@ -310,21 +310,6 @@ background-image: url(img/tidy_stack_small.jpg)
 ---
 name: introduction
 class: left, middle
-background-image: url(img/tellerrand.jpg)
-
-.regular[
-# Advices
-
-Have a look at:
-
-http://isa-principles.org/index.html
-http://scs-architecture.org/
-
-]
-
----
-name: introduction
-class: left, middle
 background-image: url(img/idea.jpg)
 
 .regular[
