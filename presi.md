@@ -57,7 +57,7 @@ class: left, middle
 background-image: url(img/space.jpg)
 
 .regular[
-# Advices
+## Advices
 .page_right[
 ![](img/containers_2x.png)
 ]
@@ -72,15 +72,12 @@ class: left, middle
 background-image: url(img/space.jpg)
 
 .page_left[
-# An Interesting Age
+## An Interesting Age
 
 <i class="fab fa-instagram fa-1x"></i> [Instagram](https://www.instagram.com)
 <i class="fab fa-pinterest fa-1x"></i> [Netflix](https://www.nginx.com/blog/microservices-at-netflix-architectural-best-practices/)
 <i class="fab fa-whatsapp fa-1x"></i> [Whatsapp](https://www.fastcompany.com/3026758/inside-erlang-the-rare-programming-language-behind-whatsapps-success)
 <i class="fab fa-sap fa-1x"></i> [SAP](https://news.sap.com/germany/vorteile-von-microservices/)
-]
-.footnote[
-<i class="fa fa-link fa-1x"></i> [12 Factor](https://12factor.net/de/)
 ]
 
 ---
@@ -89,7 +86,7 @@ class: left, middle
 background-image: url(img/space.jpg)
 
 .page_left[
-# An Interesting Age
+## An Interesting Age
 
 <i class="fab fa-instagram fa-1x"></i> [Instagram](https://www.instagram.com) Python (Django) Monolith.
 
@@ -107,7 +104,7 @@ class: left, middle
 background-image: url(img/space.jpg)
 
 .regular[
-# What is a Microservice?
+## What is a Microservice?
 
 > The term "Microservice Architecture" (...) describe[s] a
 > particular way of designing software applications as suites of
@@ -130,7 +127,7 @@ class: left, middle
 background-image: url(img/extinct.jpg)
 
 .regular[
-# Where Does it Come From?
+## Where Does it Come From?
 
 ![Ancient Aliens](img/unix.jpg)
 ]
@@ -141,7 +138,8 @@ class: left, middle
 background-image: url(img/extinct.jpg)
 
 .regular[
-# Eric Raymond’s 17 Unix Rules
+## Eric Raymond’s 17 Unix Rules
+
 1. Rule of Modularity
 1. Rule of Composition
 1. Rule of Separation
@@ -275,7 +273,7 @@ background-image: url(img/extinct.jpg)
 ## Example 1
 
 ```bash
-# print all SVGs...
+# Print all SVGs...
 
 $ tree | grep svg | awk '{ print $3 }'
 ```
@@ -290,6 +288,8 @@ background-image: url(img/extinct.jpg)
 ## Example 1 - Explanation
 
 ```bash
+# Get all SVGs in tree
+
 $ tree | grep svg
 │   ├── complete_view.svg
 │   ├── landscape.svg
@@ -299,7 +299,7 @@ $ tree | grep svg
 │   ├── process_sample.svg
 │   ├── three_landscapes.svg
 
-# Just with one other program we achieve
+# Print 3rd coloumn so we get the filenames
 
 $ tree | grep svg | awk '{ print $3 }'
 complete_view.svg
@@ -366,15 +366,19 @@ background-image: url(img/tidy_stack_small.jpg)
 .regular[
 # Advices - Summary
 
+
+1. Know the Unix philosophy.
+
+1. Design good APIs.
+
+1. Use a centralized logging.
+
+1. Communication is key.
+
 1. Do 12 Factor apps.
-
-2. Know the Unix philosophy.
-
-3. Design good APIs.
-
-4. Use a centralized logging.
-
-6. Communication is key.
+]
+.footnote[
+<i class="fa fa-link fa-1x"></i> [12 Factor](https://12factor.net/de/)
 ]
 
 ---
