@@ -780,19 +780,122 @@ background-image: url(img/solo_1.jpg)
 ]
 
 ---
+background-image: url(img/construct.jpg)
+
+---
 name: introduction
 class: center, middle
-background-image: url(img/pilot.jpg)
+background-image: url(img/construct.jpg)
 
 .regular[
 ![containerpilot](img/sales_example.png)
 ]
 .footnote[
-<br>
-<br>
-<i class="fab fa-github fa-1x"></i> [Source](https://github.com/autopilotpattern/workshop)
+<i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
 ]
 
+---
+name: introduction
+class: center, middle
+background-image: url(img/construct.jpg)
+
+.regular[
+![containerpilot](img/sales_example.png)
+]
+.footnote[
+<i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
+]
+
+---
+name: introduction
+class: center, middle
+background-image: url(img/construct.jpg)
+
+.regular[
+![containerpilot](img/container-events.png)
+]
+.footnote[
+<i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
+]
+
+---
+name: introduction
+class: center, middle
+background-image: url(img/construct.jpg)
+
+.regular[
+![containerpilot](img/process_autopilot-pattern.png)
+]
+.footnote[
+<i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
+]
+
+---
+name: introduction
+class: center, middle
+background-image: url(img/construct.jpg)
+
+.regular[
+![containerpilot](img/flow-start-application.png)
+]
+.footnote[
+<i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
+]
+
+---
+name: introduction
+class: center, middle
+background-image: url(img/construct.jpg)
+
+.regular[
+![containerpilot](img/flow-onChange.png)
+]
+.footnote[
+<i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
+]
+
+---
+name: introduction
+class: center, middle
+background-image: url(img/construct.jpg)
+
+.regular[
+![containerpilot](img/flow-onChange.png)
+]
+.footnote[
+<i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
+]
+
+---
+name: introduction
+class: center, middle
+background-image: url(img/construct.jpg)
+
+.regular[
+![containerpilot](img/flow-sigterm.png)
+]
+.footnote[
+<i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
+]
+
+---
+name: introduction
+class: left, middle
+background-image: url(img/construct.jpg)
+
+.regular[
+# Autopilot
+
+1. Technology agnostic orchestration pattern.
+1. Will bring you transparency.
+1. Devs learn to thing like operators.
+1. Available on your platform.
+]
+
+---
+name: introduction
+class: center, middle
+background-image: url(img/travel.jpg)
 
 ---
 name: explore
