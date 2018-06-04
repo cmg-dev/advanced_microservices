@@ -595,7 +595,7 @@ background-image: url(img/business_case.jpg)
 
 ---
 name: motivation
-class: center, middle
+class: center, top
 background-image: url(img/business_case.jpg)
 
 .regular[
@@ -804,18 +804,6 @@ class: center, middle
 background-image: url(img/construct.jpg)
 
 .regular[
-![containerpilot](img/sales_example.png)
-]
-.footnote[
-<i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
-]
-
----
-name: introduction
-class: center, middle
-background-image: url(img/construct.jpg)
-
-.regular[
 ![containerpilot](img/container-events.png)
 ]
 .footnote[
@@ -864,18 +852,6 @@ class: center, middle
 background-image: url(img/construct.jpg)
 
 .regular[
-![containerpilot](img/flow-onChange.png)
-]
-.footnote[
-<i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
-]
-
----
-name: introduction
-class: center, middle
-background-image: url(img/construct.jpg)
-
-.regular[
 ![containerpilot](img/flow-sigterm.png)
 ]
 .footnote[
@@ -892,7 +868,7 @@ background-image: url(img/construct.jpg)
 
 1. Technology agnostic orchestration pattern.
 1. Will bring you transparency.
-1. Devs learn to thing like operators.
+1. Devs learn to think like operators.
 1. Available on your platform.
 ]
 
