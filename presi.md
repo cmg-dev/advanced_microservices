@@ -89,7 +89,7 @@ background-image: url(img/space.jpg)
 
 <i class="fab fa-instagram fa-1x"></i> [Instagram](https://www.instagram.com) Python (Django) Monolith.
 
-<i class="fa fa-tv fa-1x"></i> [Netflix](https://www.nginx.com/blog/microservices-at-netflix-architectural-best-practices/) Well documented Microservice structure.
+<i class="fab fa-tv fa-1x"></i> [Netflix](https://www.nginx.com/blog/microservices-at-netflix-architectural-best-practices/) Well documented Microservice structure.
 
 <i class="fab fa-whatsapp fa-1x"></i> [Whatsapp](https://www.fastcompany.com/3026758/inside-erlang-the-rare-programming-language-behind-whatsapps-success) Monolithic structure; started out in Erlang.
 
@@ -355,7 +355,7 @@ background-image: url(img/space.jpg)
 ## How Does it Look Like?
 ]
 
-![process2](img/complete_view.svg)
+![Complete Process](img/complete_view.svg)
 
 ---
 name: introduction
@@ -578,7 +578,7 @@ background-image: url(img/business_case.jpg)
 .regular[
 ## Argument for Processes
 
-![process1](img/process_delete.svg)
+![Process Delete](img/process_delete.svg)
 ]
 
 ---
@@ -589,7 +589,7 @@ background-image: url(img/business_case.jpg)
 .regular[
 ## Argument for Processes
 
-![process2](img/landscape.svg)
+![Landscape](img/landscape.svg)
 ]
 
 ---
@@ -600,7 +600,7 @@ background-image: url(img/business_case.jpg)
 .regular[
 ## Argument for Processes
 
-![process2](img/process_sample.svg)
+![Process Sample](img/process_sample.svg)
 ]
 
 ---
@@ -609,7 +609,7 @@ class: center, top
 background-image: url(img/business_case.jpg)
 
 .regular[
-![process2](img/layered_architecture_with_processes.svg)
+![Layered Architecture](img/layered_architecture_with_processes.svg)
 ]
 
 ---
@@ -618,7 +618,7 @@ class: center, middle
 background-image: url(img/business_case.jpg)
 
 .regular[
-![dashboad](img/kibana_dashboarg.png)
+![Dashboad](img/kibana_dashboarg.png)
 ]
 
 ---
@@ -627,7 +627,7 @@ class: center, middle
 background-image: url(img/business_case.jpg)
 
 .regular[
-![heatmap](img/heatmap.png)
+![Heatmap](img/heatmap.png)
 ]
 
 ---
@@ -725,7 +725,7 @@ name: introduction
 class: center, middle
 background-image: url(img/pilot.jpg)
 
-![containerpilot](img/containerpilot_architecture.png)
+![Containerpilot](img/containerpilot_architecture.png)
 
 .footnote[
 <i class="fa fa-link fa-1x"></i> [Source](http://container-solutions.com/containerpilot-on-mantl/)
@@ -751,7 +751,7 @@ class: center, middle
 background-image: url(img/pilot.jpg)
 
 .regular[
-![containerpilot](img/application-diagram_simple.jpg)
+![Containerpilot](img/application-diagram_simple.jpg)
 ]
 .footnote[
 <i class="fa fa-link fa-1x"></i> [Autopilot Hello-World](https://github.com/autopilotpattern/hello-world)
@@ -791,7 +791,7 @@ class: center, middle
 background-image: url(img/construct.jpg)
 
 .regular[
-![containerpilot](img/sales_example.png)
+![Containerpilot](img/sales_example.png)
 ]
 .footnote[
 <i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
@@ -803,7 +803,7 @@ class: center, middle
 background-image: url(img/construct.jpg)
 
 .regular[
-![containerpilot](img/container-events.png)
+![Containerpilot](img/container-events.png)
 ]
 .footnote[
 <i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
@@ -815,7 +815,7 @@ class: center, middle
 background-image: url(img/construct.jpg)
 
 .regular[
-![containerpilot](img/process_autopilot-pattern.png)
+![Containerpilot](img/process_autopilot-pattern.png)
 ]
 .footnote[
 <i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
@@ -827,7 +827,7 @@ class: center, middle
 background-image: url(img/construct.jpg)
 
 .regular[
-![containerpilot](img/flow-start-application.png)
+![Containerpilot](img/flow-start-application.png)
 ]
 .footnote[
 <i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
@@ -839,7 +839,7 @@ class: center, middle
 background-image: url(img/construct.jpg)
 
 .regular[
-![containerpilot](img/flow-onChange.png)
+![Containerpilot](img/flow-onChange.png)
 ]
 .footnote[
 <i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
@@ -851,7 +851,7 @@ class: center, middle
 background-image: url(img/construct.jpg)
 
 .regular[
-![containerpilot](img/flow-sigterm.png)
+![Containerpilot](img/flow-sigterm.png)
 ]
 .footnote[
 <i class="fa fa-link fa-1x"></i> [Source](http://autopilotpattern.io/example)
@@ -897,5 +897,5 @@ class: left, middle
 background-image: url(img/curious.jpg)
 
 .page_left[
-#... stay Curious!
+#... Stay Curious!
 ]
