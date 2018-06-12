@@ -1,5 +1,4 @@
-﻿class:
-background-image: url(img/explore.jpg)
+﻿background-image: url(img/explore.jpg)
 
 ---
 name: about
@@ -17,7 +16,7 @@ Open Minded
 <i class="fab fa-github-square fa-2x"></i> [cmg-dev](https://github.com/cmg-dev)
 
 <i class="fab fa-twitter-square fa-2x"></i> [@codethonian](https://twitter.com/codethonian)
-]
+
 ]
 
 ---
@@ -75,7 +74,7 @@ background-image: url(img/space.jpg)
 ## An Interesting Age
 
 <i class="fab fa-instagram fa-1x"></i> [Instagram](https://www.instagram.com)
-<i class="fab fa-pinterest fa-1x"></i> [Netflix](https://www.nginx.com/blog/microservices-at-netflix-architectural-best-practices/)
+<i class="fa fa-tv fa-1x"></i> [Netflix](https://www.nginx.com/blog/microservices-at-netflix-architectural-best-practices/)
 <i class="fab fa-whatsapp fa-1x"></i> [Whatsapp](https://www.fastcompany.com/3026758/inside-erlang-the-rare-programming-language-behind-whatsapps-success)
 <i class="fab fa-sap fa-1x"></i> [SAP](https://news.sap.com/germany/vorteile-von-microservices/)
 ]
