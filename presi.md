@@ -16,7 +16,7 @@ Open Minded
 <i class="fab fa-github-square fa-2x"></i> [cmg-dev](https://github.com/cmg-dev)
 
 <i class="fab fa-twitter-square fa-2x"></i> [@codethonian](https://twitter.com/codethonian)
-
+]
 ]
 
 ---
