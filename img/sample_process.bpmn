@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.6.0">
+        <bpmn:collaboration id="Demo">
+            <bpmn:participant id="DemoProcess" name="Acme Process" processRef="TellProcess">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:participant>
+        </bpmn:collaboration>
+        <bpmn:process id="TellProcess" name="TellProcess" isExecutable="true">
+            <bpmn:sequenceFlow id="ProcessInput" sourceRef="ProcessInputEvent" targetRef="TransformActivity" />
+            <bpmn:sequenceFlow id="PayloadWithError" name="" sourceRef="BoundaryEvent_1gfzfcg" targetRef="HandleErrorStoreActivityJoinGateway">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:serviceTask id="TransformActivity" name="Transdorm Message">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    ProcessInput
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    TransformResult
+                </bpmn:outgoing>
+            </bpmn:serviceTask>
+            <bpmn:sequenceFlow id="TransformResult" sourceRef="TransformActivity" targetRef="ShouldEncryptGateway" />
+            <bpmn:exclusiveGateway id="ShouldEncryptGateway" name="Encrypt Message?">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    TransformResult
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    WaitForEncryptKeyInput
+                </bpmn:outgoing>
+                <bpmn:outgoing>
+                    ShouldRemoteTokenizeInput
+                </bpmn:outgoing>
+            </bpmn:exclusiveGateway>
+            <bpmn:sequenceFlow id="WaitForEncryptKeyInput" name="y" sourceRef="ShouldEncryptGateway" targetRef="WaitForEncryptKey">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">
+                </bpmn:conditionExpression>
+            </bpmn:sequenceFlow>
+            <bpmn:sequenceFlow id="ShouldRemoteTokenizeInput" name="" sourceRef="ShouldEncryptGateway" targetRef="ShouldTokenizeRemote">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:exclusiveGateway id="ShouldTokenizeRemote" name="tokenize remotely?">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    ShouldRemoteTokenizeInput
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    TokenizeInput
+                </bpmn:outgoing>
+                <bpmn:outgoing>
+                    RemoteTokenizeInput
+                </bpmn:outgoing>
+            </bpmn:exclusiveGateway>
+            <bpmn:sequenceFlow id="TokenizeInput" name="n" sourceRef="ShouldTokenizeRemote" targetRef="TokenizeActivity">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:sequenceFlow id="RemoteTokenizeInput" name="y" sourceRef="ShouldTokenizeRemote" targetRef="TokenizeRemoteActivity">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">
+                </bpmn:conditionExpression>
+            </bpmn:sequenceFlow>
+            <bpmn:sequenceFlow id="TokenizeResult" sourceRef="TokenizeActivity" targetRef="ShouldEncryptJoin">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:sequenceFlow id="RemoteTokenizeResult" name="" sourceRef="TokenizeRemoteActivity" targetRef="ShouldEncryptJoin">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:callActivity id="TokenizeRemoteActivity" name="Tokenize Message Remotely">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    RemoteTokenizeInput
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    RemoteTokenizeResult
+                </bpmn:outgoing>
+            </bpmn:callActivity>
+            <bpmn:serviceTask id="TokenizeActivity" name="Tokenize Message">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    TokenizeInput
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    TokenizeResult
+                </bpmn:outgoing>
+            </bpmn:serviceTask>
+            <bpmn:startEvent id="ProcessInputEvent" name="Message recieved">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:outgoing>
+                    ProcessInput
+                </bpmn:outgoing>
+                <bpmn:messageEventDefinition />
+            </bpmn:startEvent>
+            <bpmn:exclusiveGateway id="ShouldEncryptJoin">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    TokenizeResult
+                </bpmn:incoming>
+                <bpmn:incoming>
+                    WaitForKeyJoinResult
+                </bpmn:incoming>
+                <bpmn:incoming>
+                    RemoteTokenizeResult
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    StoreInput
+                </bpmn:outgoing>
+            </bpmn:exclusiveGateway>
+            <bpmn:serviceTask id="StoreActivity" name="Store Message">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    StoreInput
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    StoreResult
+                </bpmn:outgoing>
+            </bpmn:serviceTask>
+            <bpmn:exclusiveGateway id="HandleErrorStoreActivityJoinGateway">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    StoreResult
+                </bpmn:incoming>
+                <bpmn:incoming>
+                    PayloadWithError
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    ProcessResult
+                </bpmn:outgoing>
+            </bpmn:exclusiveGateway>
+            <bpmn:sequenceFlow id="WaitForKeyJoinResult" sourceRef="WaitForKeyJoin" targetRef="ShouldEncryptJoin">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:sequenceFlow id="StoreInput" sourceRef="ShouldEncryptJoin" targetRef="StoreActivity">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:sequenceFlow id="StoreResult" sourceRef="StoreActivity" targetRef="HandleErrorStoreActivityJoinGateway">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:sequenceFlow id="ProcessResult" name="" sourceRef="HandleErrorStoreActivityJoinGateway" targetRef="ProcessResultEvent">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:boundaryEvent id="BoundaryEvent_1gfzfcg" name="Payload == &#34;error&#34;" attachedToRef="StoreActivity">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:outgoing>
+                    PayloadWithError
+                </bpmn:outgoing>
+                <bpmn:errorEventDefinition />
+            </bpmn:boundaryEvent>
+            <bpmn:intermediateCatchEvent id="IntermediateCatchEvent_1c3t02f" name="Timeout reached">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    SequenceFlow_1fs8vhs
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    TimeoutResult
+                </bpmn:outgoing>
+                <bpmn:timerEventDefinition />
+            </bpmn:intermediateCatchEvent>
+            <bpmn:eventBasedGateway id="WaitForEncryptKey" name="Wait for Key">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    WaitForEncryptKeyInput
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    SequenceFlow_1fs8vhs
+                </bpmn:outgoing>
+                <bpmn:outgoing>
+                    Unkown
+                </bpmn:outgoing>
+            </bpmn:eventBasedGateway>
+            <bpmn:exclusiveGateway id="WaitForKeyJoin" name="">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    TimeoutResult
+                </bpmn:incoming>
+                <bpmn:incoming>
+                    EncryptResult
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    WaitForKeyJoinResult
+                </bpmn:outgoing>
+            </bpmn:exclusiveGateway>
+            <bpmn:sequenceFlow id="SequenceFlow_1fs8vhs" name="" sourceRef="WaitForEncryptKey" targetRef="IntermediateCatchEvent_1c3t02f">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:sequenceFlow id="TimeoutResult" sourceRef="IntermediateCatchEvent_1c3t02f" targetRef="WaitForKeyJoin">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:sequenceFlow id="Unkown" name="" sourceRef="WaitForEncryptKey" targetRef="IntermediateCatchEvent_09kn1wa">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:sequenceFlow id="EncryptResult" name="" sourceRef="EncryptActivity" targetRef="WaitForKeyJoin">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+            </bpmn:sequenceFlow>
+            <bpmn:intermediateCatchEvent id="IntermediateCatchEvent_09kn1wa" name="Key received">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    Unkown
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    SequenceFlow_1g76uew
+                </bpmn:outgoing>
+                <bpmn:messageEventDefinition messageRef="Message_uCWqPOwM" />
+            </bpmn:intermediateCatchEvent>
+            <bpmn:serviceTask id="EncryptActivity" name="Encrypt Message">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    SequenceFlow_1g76uew
+                </bpmn:incoming>
+                <bpmn:outgoing>
+                    EncryptResult
+                </bpmn:outgoing>
+            </bpmn:serviceTask>
+            <bpmn:sequenceFlow id="SequenceFlow_1g76uew" sourceRef="IntermediateCatchEvent_09kn1wa" targetRef="EncryptActivity" />
+            <bpmn:endEvent id="ProcessResultEvent" name="Message Processed">
+                <bpmn:extensionElements>
+                    <camunda:executionListener class="" event="" />
+                    <camunda:properties />
+                    <camunda:properties />
+                </bpmn:extensionElements>
+                <bpmn:incoming>
+                    ProcessResult
+                </bpmn:incoming>
+            </bpmn:endEvent>
+        </bpmn:process>
+        <bpmn:message id="Message_uCWqPOwM" name="SendKeyEvent" />
+        <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+            <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Demo">
+                <bpmndi:BPMNShape id="Participant_0yv4605_di" bpmnElement="DemoProcess">
+                    <dc:Bounds x="156" y="189" width="1037" height="407" />
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNEdge id="SequenceFlow_085bp4n_di" bpmnElement="ProcessInput">
+                    <di:waypoint x="252" y="353" />
+                    <di:waypoint x="282" y="353" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="222" y="338" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNEdge id="SequenceFlow_0iqpqcr_di" bpmnElement="TransformResult">
+                    <di:waypoint x="382" y="353" />
+                    <di:waypoint x="408" y="353" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="350" y="338" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNEdge id="SequenceFlow_1by0n9q_di" bpmnElement="TokenizeResult">
+                    <di:waypoint x="675" y="249" />
+                    <di:waypoint x="876" y="249" />
+                    <di:waypoint x="876" y="328" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="730.5" y="234" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNShape id="EndEvent_1dejkz2_di" bpmnElement="ProcessResultEvent">
+                    <dc:Bounds x="1129" y="335" width="36" height="36" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="1121" y="374" width="52" height="25" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNEdge id="SequenceFlow_0kbpr0x_di" bpmnElement="StoreResult">
+                    <di:waypoint x="1027" y="353" />
+                    <di:waypoint x="1057" y="353" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="997" y="338" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNShape id="ExclusiveGateway_1tn7klk_di" bpmnElement="ShouldEncryptGateway" isMarkerVisible="true">
+                    <dc:Bounds x="408" y="328" width="50" height="50" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="407" y="290" width="51" height="25" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNShape id="ExclusiveGateway_1d8o3wp_di" bpmnElement="ShouldEncryptJoin" isMarkerVisible="true">
+                    <dc:Bounds x="851" y="328" width="50" height="50" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="831" y="381" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNEdge id="SequenceFlow_0ladgwm_di" bpmnElement="StoreInput">
+                    <di:waypoint x="901" y="353" />
+                    <di:waypoint x="927" y="353" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="869" y="338" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNShape id="BoundaryEvent_12zm9c2_di" bpmnElement="BoundaryEvent_1gfzfcg">
+                    <dc:Bounds x="975" y="375" width="36" height="36" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="996" y="442" width="90" height="13" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNShape id="ExclusiveGateway_1ug7iph_di" bpmnElement="HandleErrorStoreActivityJoinGateway" isMarkerVisible="true">
+                    <dc:Bounds x="1057" y="328" width="50" height="50" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="1037" y="381" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNEdge id="SequenceFlow_1bhfi1k_di" bpmnElement="ProcessResult">
+                    <di:waypoint x="1107" y="353" />
+                    <di:waypoint x="1129" y="353" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="1073" y="338" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNEdge id="SequenceFlow_1aydt4m_di" bpmnElement="PayloadWithError">
+                    <di:waypoint x="993" y="411" />
+                    <di:waypoint x="993" y="434" />
+                    <di:waypoint x="1082" y="434" />
+                    <di:waypoint x="1082" y="378" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="992.5" y="419" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNShape id="ServiceTask_1b0y691_di" bpmnElement="TransformActivity">
+                    <dc:Bounds x="282" y="313" width="100" height="80" />
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNShape id="ServiceTask_06kians_di" bpmnElement="TokenizeActivity">
+                    <dc:Bounds x="575" y="209" width="100" height="80" />
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNShape id="ServiceTask_0542ylb_di" bpmnElement="StoreActivity">
+                    <dc:Bounds x="927" y="313" width="100" height="80" />
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNShape id="EventBasedGateway_1vspb5o_di" bpmnElement="WaitForEncryptKey">
+                    <dc:Bounds x="491" y="458" width="50" height="50" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="445" y="501" width="60" height="13" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNShape id="IntermediateCatchEvent_1c3t02f_di" bpmnElement="IntermediateCatchEvent_1c3t02f">
+                    <dc:Bounds x="607" y="420" width="36" height="36" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="585" y="443" width="83" height="13" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNEdge id="SequenceFlow_1fs8vhs_di" bpmnElement="SequenceFlow_1fs8vhs">
+                    <di:waypoint x="516" y="458" />
+                    <di:waypoint x="516" y="438" />
+                    <di:waypoint x="607" y="438" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="486" y="448" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNShape id="IntermediateCatchEvent_09kn1wa_di" bpmnElement="IntermediateCatchEvent_09kn1wa">
+                    <dc:Bounds x="607" y="518" width="36" height="36" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="593" y="557" width="64" height="13" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNEdge id="SequenceFlow_0c61lt7_di" bpmnElement="Unkown">
+                    <di:waypoint x="516" y="508" />
+                    <di:waypoint x="516" y="536" />
+                    <di:waypoint x="607" y="536" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="486" y="522" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNShape id="ExclusiveGateway_11hm1qo_di" bpmnElement="WaitForKeyJoin" isMarkerVisible="true">
+                    <dc:Bounds x="805" y="458" width="50" height="50" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="785" y="498" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNEdge id="SequenceFlow_12yl8h2_di" bpmnElement="TimeoutResult">
+                    <di:waypoint x="643" y="438" />
+                    <di:waypoint x="830" y="438" />
+                    <di:waypoint x="830" y="458" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="691.5" y="423" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNEdge id="SequenceFlow_1g76uew_di" bpmnElement="SequenceFlow_1g76uew">
+                    <di:waypoint x="643" y="536" />
+                    <di:waypoint x="689" y="536" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="621" y="521" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNEdge id="SequenceFlow_0muosik_di" bpmnElement="WaitForKeyJoinResult">
+                    <di:waypoint x="855" y="483" />
+                    <di:waypoint x="876" y="483" />
+                    <di:waypoint x="876" y="378" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="820.5" y="468" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNShape id="ServiceTask_0yz0crr_di" bpmnElement="EncryptActivity">
+                    <dc:Bounds x="689" y="496" width="100" height="80" />
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNEdge id="SequenceFlow_0dz7viy_di" bpmnElement="EncryptResult">
+                    <di:waypoint x="789" y="536" />
+                    <di:waypoint x="830" y="536" />
+                    <di:waypoint x="830" y="508" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="764.5" y="521" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNEdge id="SequenceFlow_122xgnh_di" bpmnElement="WaitForEncryptKeyInput">
+                    <di:waypoint x="433" y="378" />
+                    <di:waypoint x="433" y="483" />
+                    <di:waypoint x="491" y="483" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="444" y="382.5326086956522" width="6" height="13" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNShape id="ExclusiveGateway_16zglu4_di" bpmnElement="ShouldTokenizeRemote" isMarkerVisible="true">
+                    <dc:Bounds x="492" y="328" width="50" height="50" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="493" y="378" width="49" height="25" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNEdge id="SequenceFlow_1nys0nd_di" bpmnElement="ShouldRemoteTokenizeInput">
+                    <di:waypoint x="458" y="353" />
+                    <di:waypoint x="492" y="353" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="430" y="338" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNEdge id="SequenceFlow_1liw4iy_di" bpmnElement="TokenizeInput">
+                    <di:waypoint x="517" y="328" />
+                    <di:waypoint x="517" y="249" />
+                    <di:waypoint x="575" y="249" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="524" y="301" width="7" height="13" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNEdge id="SequenceFlow_0f702l2_di" bpmnElement="RemoteTokenizeInput">
+                    <di:waypoint x="542" y="353" />
+                    <di:waypoint x="575" y="353" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="540" y="357" width="6" height="13" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNEdge id="SequenceFlow_0mhodp0_di" bpmnElement="RemoteTokenizeResult">
+                    <di:waypoint x="675" y="353" />
+                    <di:waypoint x="851" y="353" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="718" y="338" width="90" height="0" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNEdge>
+                <bpmndi:BPMNShape id="CallActivity_0235lsw_di" bpmnElement="TokenizeRemoteActivity">
+                    <dc:Bounds x="575" y="313" width="100" height="80" />
+                </bpmndi:BPMNShape>
+                <bpmndi:BPMNShape id="StartEvent_129aoum_di" bpmnElement="ProcessInputEvent">
+                    <dc:Bounds x="216" y="335" width="36" height="36" />
+                    <bpmndi:BPMNLabel>
+                        <dc:Bounds x="189" y="371" width="90" height="13" />
+                    </bpmndi:BPMNLabel>
+                </bpmndi:BPMNShape>
+            </bpmndi:BPMNPlane>
+        </bpmndi:BPMNDiagram>
+    </bpmn:definitions>
