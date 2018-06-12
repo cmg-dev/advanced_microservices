@@ -89,7 +89,7 @@ background-image: url(img/space.jpg)
 
 <i class="fab fa-instagram fa-1x"></i> [Instagram](https://www.instagram.com) Python (Django) Monolith.
 
-<i class="fab fa-tv fa-1x"></i> [Netflix](https://www.nginx.com/blog/microservices-at-netflix-architectural-best-practices/) Well documented Microservice structure.
+<i class="fa fa-tv fa-1x"></i> [Netflix](https://www.nginx.com/blog/microservices-at-netflix-architectural-best-practices/) Well documented Microservice structure.
 
 <i class="fab fa-whatsapp fa-1x"></i> [Whatsapp](https://www.fastcompany.com/3026758/inside-erlang-the-rare-programming-language-behind-whatsapps-success) Monolithic structure; started out in Erlang.
 
