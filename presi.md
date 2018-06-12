@@ -885,7 +885,11 @@ background-image: url(img/playground.jpg)
 .regular[
 # Let's Play Together...
 
-<i class="fa fa-link fa-1x"></i> [7. Juni. 2018 Coding Dojo](https://www.meetup.com/de-DE/5Minds-Coding-Dojo/events/250814256)
+Visit our Meetups!
+
+<i class="fa fa-link fa-1x"></i> [5Minds Events](https://www.meetup.com/de-DE/5Minds-Coding-Dojo/)
+
+<i class="fa fa-link fa-1x"></i> [Dotnet Dev Ruhr](https://www.meetup.com/de-DE/NET-Developers-Ruhr/)
 ]
 
 ---
