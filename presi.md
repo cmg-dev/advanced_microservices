@@ -471,7 +471,7 @@ background-image: url(img/people_boss.jpg)
 .regular[
 ## Boss Thinks
 
-Moeny Money Money.
+Money Money Money.
 ]
 
 ---
